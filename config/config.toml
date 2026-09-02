@@ -1,0 +1,40 @@
+#===========================#
+#      |Host settings|      #
+#===========================#
+host = "127.0.0.1"
+port = 8080
+worker_concurrency = 4
+
+
+#===========================#
+#      |User Connection|    #
+#===========================#
+user_timeout = 120
+user_health_interval = 10
+user_health_failures = 3
+
+
+#===========================#
+#      |Backend Connection| #
+#===========================#
+backend_timeout = 120
+backend_health_interval = 5
+backend_health_failures = 3
+
+#===========================#
+#      |Backend servers|    #
+#===========================#
+[[backends]]
+name = "server1"
+ip = "127.0.0.1"
+port = 9001
+weight = 1
+
+[[backends]]
+name = "server2"
+ip = "127.0.0.1"
+port = 9002
+weight = 1
+
+
+#===========================#
