@@ -26,7 +26,6 @@ impl fmt::Display for MsgState {
 
 pub struct Msg {
     pub idh: String, //hash
-    pub at: u128,
     pub status: MsgState,
     pub data: Bytes,
 }
@@ -35,7 +34,6 @@ impl Msg {
     pub fn new(idh: &str, data: Bytes) -> Self {
         Self {
             idh: idh.to_string(),
-            at: time_stump(),
             status: MsgState::Created,
             data: data,
         }
